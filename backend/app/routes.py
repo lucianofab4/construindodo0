@@ -11,8 +11,9 @@ from .schemas import (
     ProjectOut,
     SubscriberCreate, SubscriberOut,
     ContactCreate, ContactOut,
+    BulkEmailIn,
 )
-from .email_utils import send_contact_email
+from .email_utils import send_contact_email, send_bulk_email
 
 logger = logging.getLogger(__name__)
 
@@ -95,6 +96,57 @@ def list_subscribers(
             for s in subs
         ],
     }
+
+
+# ── Admin: listar contatos ────────────────────────────────────────────────
+
+@router.get("/admin/contacts")
+def list_contacts(
+    token: str = Query(...),
+    db:    Session = Depends(get_db),
+):
+    import os
+    admin_token = os.getenv("ADMIN_TOKEN", "")
+    if not admin_token or token != admin_token:
+        raise HTTPException(status_code=401, detail="Não autorizado")
+    contacts = db.query(Contact).order_by(Contact.created_at.desc()).all()
+    return {
+        "total": len(contacts),
+        "contacts": [
+            {
+                "id":      c.id,
+                "name":    c.name,
+                "email":   c.email,
+                "subject": c.subject or "",
+                "message": c.message,
+                "data":    c.created_at.strftime("%d/%m/%Y %H:%M"),
+                "read":    c.read,
+            }
+            for c in contacts
+        ],
+    }
+
+
+# ── Admin: enviar email em massa ──────────────────────────────────────────
+
+@router.post("/admin/send-email")
+def bulk_send_email(
+    data:  BulkEmailIn,
+    token: str = Query(...),
+    db:    Session = Depends(get_db),
+):
+    import os
+    admin_token = os.getenv("ADMIN_TOKEN", "")
+    if not admin_token or token != admin_token:
+        raise HTTPException(status_code=401, detail="Não autorizado")
+    if not data.emails:
+        raise HTTPException(status_code=400, detail="Nenhum destinatário informado")
+    result = send_bulk_email(
+        emails=data.emails,
+        subject=data.subject,
+        body_text=data.body,
+    )
+    return result
 
 
 # ── Contact ────────────────────────────────────────────────────────────────
