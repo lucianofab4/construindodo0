@@ -76,6 +76,27 @@ def subscribe(data: SubscriberCreate, db: Session = Depends(get_db)):
     return sub
 
 
+# ── Admin: listar inscritos ────────────────────────────────────────────────
+
+@router.get("/admin/subscribers")
+def list_subscribers(
+    token: str = Query(...),
+    db:    Session = Depends(get_db),
+):
+    import os
+    admin_token = os.getenv("ADMIN_TOKEN", "")
+    if not admin_token or token != admin_token:
+        raise HTTPException(status_code=401, detail="Não autorizado")
+    subs = db.query(Subscriber).order_by(Subscriber.created_at.desc()).all()
+    return {
+        "total": len(subs),
+        "subscribers": [
+            {"email": s.email, "data": s.created_at.strftime("%d/%m/%Y %H:%M")}
+            for s in subs
+        ],
+    }
+
+
 # ── Contact ────────────────────────────────────────────────────────────────
 
 @router.post("/contact", response_model=ContactOut, status_code=201)
