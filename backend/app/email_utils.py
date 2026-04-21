@@ -4,6 +4,7 @@ import smtplib
 import logging
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from typing import List
 
 logger = logging.getLogger(__name__)
 
@@ -100,3 +101,71 @@ def send_contact_email(name: str, email: str, subject: str, message: str) -> boo
     except Exception as exc:
         logger.error(f"Erro ao enviar email: {exc}")
         return False
+
+
+def send_bulk_email(emails: List[str], subject: str, body_text: str) -> dict:
+    """
+    Envia email para uma lista de inscritos.
+    Retorna dict com success, failed e optional error.
+    """
+    smtp_host = os.getenv("SMTP_HOST")
+    smtp_port = int(os.getenv("SMTP_PORT", "587"))
+    smtp_user = os.getenv("SMTP_USER")
+    smtp_pass = os.getenv("SMTP_PASS")
+
+    if not all([smtp_host, smtp_user, smtp_pass]):
+        return {"success": 0, "failed": len(emails), "error": "SMTP não configurado"}
+
+    # Converte quebras de linha em <br> para o HTML
+    body_html = body_text.replace("\n", "<br>")
+
+    html_template = f"""
+    <html>
+    <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                 background: #09090b; color: #fafafa; padding: 32px; max-width: 600px; margin: 0 auto;">
+
+      <div style="margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #27272a;">
+        <span style="color: #6366f1; font-size: 13px; font-weight: 700;
+                     text-transform: uppercase; letter-spacing: 0.1em;">construindodo0</span>
+      </div>
+
+      <div style="color: #d4d4d8; font-size: 15px; line-height: 1.8; margin-bottom: 32px;">
+        {body_html}
+      </div>
+
+      <div style="border-top: 1px solid #27272a; padding-top: 20px; margin-top: 32px;">
+        <p style="color: #52525b; font-size: 12px; margin: 0;">
+          Você recebeu este email porque se inscreveu em construindodo0.com.br.
+        </p>
+      </div>
+
+    </body>
+    </html>
+    """
+
+    success_count = 0
+    failed_count = 0
+
+    try:
+        with smtplib.SMTP(smtp_host, smtp_port) as server:
+            server.ehlo()
+            server.starttls()
+            server.login(smtp_user, smtp_pass)
+            for recipient in emails:
+                try:
+                    msg = MIMEMultipart("alternative")
+                    msg["Subject"] = subject
+                    msg["From"]    = smtp_user
+                    msg["To"]      = recipient
+                    msg.attach(MIMEText(html_template, "html", "utf-8"))
+                    server.sendmail(smtp_user, recipient, msg.as_string())
+                    success_count += 1
+                    logger.info(f"Email enviado para {recipient}")
+                except Exception as e:
+                    logger.error(f"Falha ao enviar para {recipient}: {e}")
+                    failed_count += 1
+    except Exception as exc:
+        logger.error(f"Erro SMTP na conexão: {exc}")
+        return {"success": success_count, "failed": len(emails) - success_count, "error": str(exc)}
+
+    return {"success": success_count, "failed": failed_count}

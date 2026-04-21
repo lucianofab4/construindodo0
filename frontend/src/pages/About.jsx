@@ -96,13 +96,12 @@ export default function About() {
               <div className="sticky top-24">
                 <div className="relative">
                   {/* Photo */}
-                  <div className="w-full aspect-[4/5] rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col items-center justify-end overflow-hidden">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                      <div className="w-24 h-24 rounded-full bg-zinc-800 mb-3 flex items-center justify-center">
-                        <span className="text-4xl font-black text-zinc-600">LD</span>
-                      </div>
-                      <p className="text-xs text-zinc-700 mt-2">Substituir por foto</p>
-                    </div>
+                  <div className="w-full aspect-[4/5] rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col items-center justify-end overflow-hidden relative">
+                    <img
+                      src="/foto.jpeg"
+                      alt="Luciano Dias"
+                      className="absolute inset-0 w-full h-full object-cover object-top"
+                    />
                     <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-zinc-950 to-transparent z-10" />
                     <div className="relative z-20 p-6 w-full">
                       <p className="font-bold text-zinc-50 text-xl">Luciano Dias</p>
@@ -125,8 +124,8 @@ export default function About() {
                       <p className="text-xs text-zinc-500 mt-0.5">Empresa fundada</p>
                     </div>
                     <div>
-                      <p className="text-2xl font-black text-zinc-50">2+</p>
-                      <p className="text-xs text-zinc-500 mt-0.5">Produtos em build</p>
+                      <p className="text-2xl font-black text-zinc-50">6</p>
+                      <p className="text-xs text-zinc-500 mt-0.5">Empresas em construção</p>
                     </div>
                   </div>
                 </div>
@@ -134,57 +133,152 @@ export default function About() {
             </Reveal>
 
             {/* Texto */}
-            <div className="space-y-8">
+            <div className="space-y-10">
+
+              {/* Bloco 1 — Abertura honesta */}
               <Reveal>
-                <p className="text-2xl font-semibold text-zinc-200 leading-relaxed">
-                  "Por anos eu trocava horas por salário. Fazia o que mandavam, entregava o que pediam
-                  e esperava que alguém reconhecesse meu trabalho."
+                <p className="text-2xl md:text-3xl font-black text-zinc-50 leading-snug">
+                  Eu não sou guru.<br />
+                  <span className="text-zinc-400 font-normal text-xl">E não tenho uma história perfeita.</span>
                 </p>
               </Reveal>
 
-              <Reveal delay={100}>
+              {/* Bloco 2 — O caminho padrão */}
+              <Reveal delay={80}>
                 <p className="text-zinc-400 leading-relaxed text-lg">
-                  A decisão de sair do CLT não veio de um momento épico. Veio do cansaço. Do cansaço de construir
-                  sonhos de outros enquanto os meus ficavam esperando o "momento certo".
+                  Durante anos, segui o caminho padrão: estudar, trabalhar, buscar estabilidade… CLT.
                 </p>
               </Reveal>
 
-              <Reveal delay={150}>
-                <p className="text-zinc-400 leading-relaxed">
-                  Em janeiro de 2026 pedi demissão. Sem produto pronto. Sem cliente garantido. Só com a clareza
-                  de que continuar seria mais arriscado do que tentar. Os primeiros meses foram difíceis —
-                  financeiramente e emocionalmente. Mas foram também os mais honestos da minha vida profissional.
-                </p>
-              </Reveal>
-
-              <Reveal delay={200}>
-                <p className="text-zinc-400 leading-relaxed">
-                  Identifiquei um problema real no mercado de documentação digital, validei com clientes antes de
-                  escrever uma linha de código e construí a NacionalSign — um SaaS de assinatura digital.
-                  Da ideia ao primeiro pagamento recorrente, documentei cada passo.
-                </p>
-              </Reveal>
-
-              <Reveal delay={250}>
-                <div className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6">
-                  <p className="text-zinc-300 leading-relaxed font-medium">
-                    "Hoje dirijo a NacionalSign, estou construindo outros produtos e documenting tudo aqui — não
-                    para inspirar, mas para mostrar o jogo real. Porque a versão glamourizada do empreendedorismo
-                    não ajuda ninguém."
+              {/* Bloco 3 — O incômodo */}
+              <Reveal delay={140}>
+                <div className="border-l-2 border-brand/50 pl-5 space-y-3">
+                  <p className="text-zinc-300 leading-relaxed">
+                    Mas, ao mesmo tempo, sempre existiu algo dentro de mim.
                   </p>
-                  <p className="text-zinc-600 text-sm mt-3">— Luciano Dias</p>
+                  <p className="text-zinc-300 font-semibold">Um incômodo.</p>
+                  <p className="text-zinc-300 leading-relaxed">
+                    Uma vontade de construir algo que fosse realmente meu. Que gerasse valor de verdade.
+                    Que ajudasse pessoas. Que fizesse diferença — para um CNPJ, para um CPF… para alguém.
+                  </p>
                 </div>
               </Reveal>
 
-              <Reveal delay={300}>
-                <p className="text-zinc-400 leading-relaxed">
-                  Se você está pensando em empreender, já está no jogo ou só quer entender como funciona por dentro —
-                  este é o lugar certo. Sem filtro, sem fórmula mágica. Só trabalho real.
+              {/* Bloco 4 — Por muito tempo ficou só como pensamento */}
+              <Reveal delay={180}>
+                <p className="text-zinc-500 leading-relaxed">
+                  E por muito tempo, isso ficou só como um pensamento.
+                  Porque a verdade é que não é fácil tomar essa decisão.
+                  Sair do caminho "seguro" exige coragem.
                 </p>
               </Reveal>
 
-              <Reveal delay={350}>
-                <div className="flex gap-3 pt-4">
+              {/* Bloco 5 — Honestidade brutal */}
+              <Reveal delay={220}>
+                <div className="bg-zinc-900/80 border border-zinc-800 rounded-xl p-6 space-y-2">
+                  <p className="text-zinc-300 font-semibold text-lg leading-snug">
+                    E sendo bem direto… ainda é difícil. Todos os dias.
+                  </p>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Mas é uma das decisões que mais me dá orgulho.
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Bloco 6 — Gratidão / nada foi perdido */}
+              <Reveal delay={260}>
+                <p className="text-zinc-400 leading-relaxed">
+                  Cada escolha que eu fiz até aqui, cada lugar por onde passei, cada empresa em que trabalhei —
+                  tudo contribuiu para o que estou vivendo hoje.{' '}
+                  <span className="text-zinc-200 font-medium">Nada foi perdido. Tudo me preparou — mesmo quando eu não percebia.</span>
+                </p>
+              </Reveal>
+
+              {/* Bloco 7 — O ponto de virada */}
+              <Reveal delay={300}>
+                <p className="text-zinc-400 leading-relaxed">
+                  Mas chegou um momento em que continuar no mesmo caminho deixou de fazer sentido.
+                  Eu queria mais controle sobre a minha vida. Sobre minhas decisões.
+                  Sobre o que eu estava construindo.
+                </p>
+              </Reveal>
+
+              {/* Bloco 8 — O salto */}
+              <Reveal delay={340}>
+                <div className="rounded-xl bg-brand/5 border border-brand/20 p-6 space-y-4">
+                  <p className="text-zinc-200 font-bold text-lg leading-snug">
+                    Então eu fiz o que muita gente pensa, mas poucos fazem.
+                  </p>
+                  <div className="space-y-1 text-zinc-500 text-sm">
+                    <p>Sem garantia.</p>
+                    <p>Sem segurança.</p>
+                    <p>Sem saber exatamente como seria.</p>
+                  </div>
+                  <p className="text-zinc-400 leading-relaxed text-sm">
+                    E sim… no começo (e ainda agora), é mais difícil do que parece.
+                    Pressão. Dúvida. Insegurança — tudo ao mesmo tempo.
+                  </p>
+                  <p className="text-zinc-200 font-semibold">
+                    Empreender não é liberdade imediata.<br />É responsabilidade imediata.
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Bloco 9 — Hoje */}
+              <Reveal delay={380}>
+                <p className="text-zinc-400 leading-relaxed">
+                  Hoje estou no início do processo. Construindo uma empresa de tecnologia, desenvolvendo novos
+                  produtos e aprendendo todos os dias — muitas vezes errando mais do que acertando.
+                  É cedo para certezas.
+                </p>
+              </Reveal>
+
+              {/* Bloco 10 — A única certeza */}
+              <Reveal delay={420}>
+                <div className="space-y-2">
+                  <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Mas existe uma que eu tenho:</p>
+                  <p className="text-3xl font-black text-zinc-50 leading-tight">
+                    Agora, não tem mais volta.
+                  </p>
+                  <p className="text-zinc-400 leading-relaxed pt-1">
+                    E, apesar de tudo, eu estou animado. Com vontade. Com fome de fazer dar certo.
+                    Porque, pela primeira vez, eu sinto que estou vivendo de verdade.
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Bloco 11 — Por que documentar */}
+              <Reveal delay={460}>
+                <div className="border-t border-zinc-800 pt-8 space-y-3">
+                  <p className="text-zinc-300 font-semibold">Foi por isso que eu decidi documentar essa jornada.</p>
+                  <div className="space-y-1 text-zinc-500 text-sm">
+                    <p>Sem romantizar.</p>
+                    <p>Sem promessas irreais.</p>
+                    <p>Sem vender um caminho fácil.</p>
+                  </div>
+                  <p className="text-zinc-400 leading-relaxed">
+                    Só mostrando o jogo como ele realmente é.
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Bloco 12 — CTA emocional */}
+              <Reveal delay={500}>
+                <div className="bg-zinc-900 border border-zinc-700 rounded-xl p-6 space-y-3">
+                  <p className="text-zinc-200 font-semibold leading-relaxed">
+                    Se você também sente que pode mais…<br />
+                    que quer construir algo…<br />
+                    ou simplesmente sair do automático…
+                  </p>
+                  <p className="text-brand font-bold text-lg">
+                    Talvez essa jornada faça sentido pra você também.
+                  </p>
+                </div>
+              </Reveal>
+
+              {/* Botões */}
+              <Reveal delay={540}>
+                <div className="flex gap-3 pt-2">
                   <Link to="/projetos" className="btn-primary">
                     Ver meus projetos <ArrowRight size={15} />
                   </Link>
@@ -193,6 +287,7 @@ export default function About() {
                   </Link>
                 </div>
               </Reveal>
+
             </div>
           </div>
         </div>

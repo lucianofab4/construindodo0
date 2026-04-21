@@ -31,13 +31,31 @@ function Reveal({ children, delay = 0 }) {
 
 const allPosts = [
   {
+    slug: 'ninguem-fala-sobre-isso-quando-voce-decide-empreender',
+    title: 'Ninguém fala sobre isso quando você decide empreender',
+    excerpt: 'Por muito tempo, parece um vírus. Uma cola invisível que te faz aceitar o caminho padrão, a rotina, o "tá bom assim". Mas ignorar o incômodo tem um preço.',
+    category: 'Empreendedorismo',
+    date: '17 Abr 2026',
+    readTime: '6',
+    featured: true,
+  },
+  {
+    slug: 'a-maior-mentira-sobre-sair-do-clt',
+    title: 'A maior mentira sobre sair do CLT',
+    excerpt: 'Todo mundo vende a ideia de que largar o crachá é sinônimo de liberdade total. A realidade é outra — e ninguém te prepara para ela.',
+    category: 'Empreendedorismo',
+    date: '19 Abr 2026',
+    readTime: '7',
+    featured: false,
+  },
+  {
     slug: 'o-dia-que-decidi-sair-do-clt',
     title: 'O dia que decidi sair do CLT',
     excerpt: 'Não foi uma decisão heroica. Foi o acúmulo de frustração com anos construindo sonhos de outros. Aqui está o que realmente aconteceu.',
     category: 'Empreendedorismo',
     date: '12 Abr 2025',
     readTime: '5',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'como-valido-ideias-sem-gastar-nada',

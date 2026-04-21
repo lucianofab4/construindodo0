@@ -3,6 +3,291 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, ChevronRight } from 'lucide-react';
 
 const posts = {
+  'ninguem-fala-sobre-isso-quando-voce-decide-empreender': {
+    title: 'Ninguém fala sobre isso quando você decide empreender',
+    category: 'Empreendedorismo',
+    date: '17 Abr 2026',
+    readTime: '6',
+    content: `
+Por muito tempo, parece um vírus.
+
+Uma espécie de "cola invisível" que gruda em você…
+e te faz aceitar.
+
+Aceitar o caminho padrão.
+Aceitar a rotina.
+Aceitar o "tá bom assim".
+
+Dependendo de onde você cresce, com quem você convive…
+se você não tiver um desejo forte de querer mais,
+você simplesmente se adapta.
+
+**E vira só mais um.**
+
+Mais um que se conforma.
+Mais um que sorri… mesmo sabendo que podia estar vivendo mais.
+
+---
+
+O tempo passa.
+
+E passa rápido.
+
+Quando você percebe…
+você já não sonha mais como antes.
+
+Você já não quer mais tanto assim.
+
+Você só… continua.
+
+Porque ficou confortável.
+
+Você já sabe fazer o seu trabalho.
+Já sabe lidar com as pessoas.
+Já sabe como tudo funciona.
+
+**E esse "conforto"… é perigoso.**
+
+Porque ele não te destrói de uma vez.
+
+Ele vai sugando aos poucos.
+
+Sua ambição.
+Sua energia.
+Seu desejo de crescer.
+
+Até que, quando você para pra pensar…
+você percebe o quanto está distante de quem queria ser.
+
+---
+
+## Isso não é um ataque a quem está no CLT.
+
+É um alerta pra quem tem um sonho.
+
+Porque se você tem…
+você sente.
+
+E ignorar isso custa caro.
+
+---
+
+## Agora entra a parte que ninguém fala:
+
+Quando você decide empreender,
+não é a liberdade que vem primeiro.
+
+**É o peso.**
+
+Você ganha responsabilidade.
+
+Responsabilidade por decisões que você nunca tomou.
+Por problemas que você nunca enfrentou.
+E principalmente… por resultados que ainda não existem.
+
+No começo, tudo é incerto.
+
+Você acorda sem saber se está no caminho certo.
+Você trabalha mais do que antes.
+E muitas vezes sente que não está saindo do lugar.
+
+E o pior…
+
+**Não tem ninguém pra te dar resposta.**
+
+---
+
+## Empreender é solitário.
+
+Mas é exatamente isso que te transforma.
+
+Porque você é obrigado a evoluir.
+
+Você aprende a lidar com pressão.
+Com medo.
+Com dúvida.
+
+E começa a desenvolver algo que poucos desenvolvem:
+
+**Capacidade de resolver problemas sozinho.**
+
+E isso muda tudo.
+
+---
+
+Não me leve a mal.
+
+Esse texto não é pra todo mundo.
+
+É pra você que sente que pode mais.
+
+Pra você que sabe que está no automático.
+
+Pra você que ainda não desistiu de querer algo maior.
+
+Eu ainda não sei se "vale a pena".
+
+Mas uma coisa eu posso te dizer:
+
+Sair do automático…
+e começar a viver de verdade…
+
+**é viciante.**
+
+É difícil.
+É pesado.
+Dá medo.
+
+Mas também é… vivo.
+
+E talvez seja exatamente isso que estava faltando.
+    `,
+  },
+  'a-maior-mentira-sobre-sair-do-clt': {
+    title: 'A maior mentira sobre sair do CLT',
+    category: 'Empreendedorismo',
+    date: '19 Abr 2026',
+    readTime: '7',
+    content: `
+A maior mentira sobre sair do CLT é simples:
+
+**"Você vai ser livre."**
+
+Muita gente vende essa ideia como se fosse um bilhete premiado.
+Larga o crachá, pede demissão e pronto — dono do seu tempo, dono da sua vida.
+
+Mas a verdade é que não é bem assim.
+
+Quando você sai do CLT, você não ganha asas.
+
+**Você troca um tipo de pressão por outro.**
+
+---
+
+## O que o CLT te dava (e você não valorizava)
+
+No CLT, você tinha salário previsível. Menos risco. Um caminho mais claro.
+
+Sabia que no fim do mês o dinheiro caía na conta — mesmo que fosse pouco.
+Tinha férias. Décimo terceiro. Alguns direitos.
+
+Claro: tinha chefe. Tinha cobrança. Tinha rotina engessada.
+
+Mas havia uma certa segurança.
+
+---
+
+## O que ninguém te conta sobre empreender
+
+Quando você decide empreender, a história muda.
+
+Você ganha liberdade — mas junto dela vem a responsabilidade.
+Você passa a ter controle — mas também carrega o peso das decisões.
+Você pode crescer — mas também pode quebrar.
+
+**É como trocar uma estrada asfaltada por um caminho cheio de pedras.**
+
+Você pode chegar mais longe.
+Mas também pode tropeçar a qualquer momento.
+
+---
+
+## A realidade que ninguém posta no Instagram
+
+Empreender não é glamour.
+
+Não é fácil. Não é rápido.
+
+É acordar cedo, dormir tarde, trabalhar mais do que trabalhava no CLT.
+É carregar nas costas cada escolha, cada erro, cada acerto.
+É sentir medo de não conseguir pagar as contas — mas também sentir orgulho quando vê o resultado do seu esforço.
+
+**A realidade é outra.**
+
+É ficar noites sem dormir pensando em como pagar fornecedores.
+É aprender a fazer de tudo: vender, atender cliente, cuidar de finanças, resolver burocracia.
+É se virar nos 30 todos os dias.
+
+---
+
+## Não é pra todo mundo. E tá tudo bem.
+
+Tem gente que é feliz no CLT.
+Que gosta da estabilidade.
+Que prefere a segurança.
+
+Não existe caminho certo ou errado.
+
+**Existe o caminho que faz sentido pra você.**
+
+Mas se você decidir entrar nesse jogo, precisa entrar consciente.
+
+Precisa saber que vai ser duro.
+Que vai exigir coragem.
+Que vai testar seus limites.
+
+Não é uma corrida de 100 metros.
+É uma maratona.
+
+Não é sobre ganhar rápido.
+**É sobre resistir.**
+
+---
+
+## Eu falo porque vivo na pele
+
+Não sou alguém que nasceu rico.
+Não tive herança. Não tive atalhos.
+
+Sou uma pessoa simples que decidiu tentar vencer na vida.
+
+Saí do CLT acreditando que ia ser fácil — que ia ser só questão de tempo.
+Mas logo percebi que a liberdade vinha acompanhada de responsabilidade.
+Que cada real que entrava dependia do meu esforço.
+Que cada erro custava caro.
+
+Já pensei em desistir várias vezes.
+Já me senti sozinho.
+
+**Mas também já senti uma alegria que nunca senti no CLT:**
+
+A alegria de ver algo que eu criei dar certo.
+De ver um cliente satisfeito.
+De perceber que, mesmo pequeno, eu estava construindo algo meu.
+
+---
+
+## Então, o que empreender realmente é?
+
+Não é sobre ser livre.
+
+É sobre **escolher suas batalhas.**
+É sobre trocar a segurança por um sonho.
+É sobre aceitar o risco porque você acredita que pode valer a pena.
+
+**E vale.**
+
+Vale porque você cresce como pessoa.
+Vale porque você aprende a se virar.
+Vale porque você descobre forças que nem sabia que tinha.
+Vale porque, mesmo tropeçando, você sente que está andando na direção dos seus sonhos.
+
+---
+
+Se você pensa em sair do CLT — não se iluda com promessas fáceis.
+
+Entre consciente.
+Entre sabendo que vai ser difícil, que vai doer, que vai exigir mais de você do que qualquer chefe já exigiu.
+
+Mas também entre sabendo que **pode ser a melhor decisão da sua vida.**
+
+Porque empreender é isso:
+
+A luta de quem sonha em vencer — mesmo começando pequeno, mesmo tropeçando.
+
+**Mas sem desistir.**
+    `,
+  },
   'o-dia-que-decidi-sair-do-clt': {
     title: 'O dia que decidi sair do CLT',
     category: 'Empreendedorismo',

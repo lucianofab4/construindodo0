@@ -211,7 +211,7 @@ export default function Home() {
                 {[
                   { label: 'empresa fundada',   value: '1' },
                   { label: 'saiu do CLT',       value: 'Jan/26' },
-                  { label: 'em construção', value: '6' },
+                  { label: 'empresas em construção', value: '6' },
                 ].map(({ label, value }) => (
                   <div key={label}>
                     <p className="text-3xl font-black text-zinc-50">{value}</p>

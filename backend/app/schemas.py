@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel, EmailStr
 
 
@@ -65,3 +65,11 @@ class ContactOut(BaseModel):
     subject: Optional[str]
 
     model_config = {"from_attributes": True}
+
+
+# ── Admin ───────────────────────────────────────────────────────────────────
+
+class BulkEmailIn(BaseModel):
+    emails:  List[str]
+    subject: str
+    body:    str
